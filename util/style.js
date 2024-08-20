@@ -79,5 +79,21 @@ export const documentStyles = StyleSheet.create({
     },
     scrollView:{
         flex: 0.8
+    },
+    button: {
+        backgroundColor: yellow,
+        fontSize: 15,
+        borderRadius: 5,
+        padding: 10,
+        margin: 30,
+        textAlign: 'center',
+    },
+    buttonShadow:{
+        border: 1,
+        shadowColor: '#000',
+        shadowRadius: 5,
+        shadowOpacity: 0.3,
+        elevation: 15,
+        shadowOffset: { width: 0, height: 2}
     }
 });

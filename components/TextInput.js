@@ -11,6 +11,7 @@ export default function TextInputSample(){
             <TextInput style={documentStyles.inputText} value={name} onChangeText={setName} placeholder="Enter a name"/>
             <Text></Text>
             <TextInput placeholder="Comments" maxLength={200} multiline={true} style={documentStyles.inputText} value={comment} onChangeText={setComment}/>
+            
             {/*
             keyboardType=number-pad, decimal-pad, numeric, email-address, phone-pad, url
             secureEntry={true|false}
