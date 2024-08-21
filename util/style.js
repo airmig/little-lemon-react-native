@@ -24,6 +24,7 @@ export const documentStyles = StyleSheet.create({
     menuContainer: {
         flex:0.3,
         padding: 10,
+        backgroundColor: green,
     },
     menuItem: {
         fontSize: 18,
@@ -61,6 +62,7 @@ export const documentStyles = StyleSheet.create({
     sectionContainer: {
         flex: 0.5,
         padding: 10,
+        backgroundColor: green,
     },
     sectionTitle: {
         backgroundColor: '#c4c4c4',
@@ -120,5 +122,14 @@ export const documentStyles = StyleSheet.create({
         fontSize: 20,
         backgroundColor: 'white',
         padding: 10
+    },
+    navLogo: {
+        height: 40,
+        width: '95%',
+        backgroundColor: 'white',
+        resizeMode: 'contain',
+        borderRadius: 10,
+        alignContent: 'center',
+        alignItems: 'center',
     }
 });

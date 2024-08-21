@@ -1,50 +1,40 @@
-import * as React from 'react';
-import {KeyboardAvoidingView, Pressable, View, Text} from 'react-native';
-import LittleLemonHeader from './components/LittleLemonHeader';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Footer from './components/Footer';
-import WelcomeScreen from './components/WelcomeScreen';
-import MenuItems from './components/MenuItems';
+import Home from './components/Home';
+import Menu from './components/Menu';
+import { View, Image } from 'react-native';
 import { documentStyles } from './util/style';
-import { Menu } from 'react-native-paper';
-import SectionItems from './components/SectionItems';
-import TextInputSample from './components/TextInput';
-import { ScrollView, Image, ImageBackground } from 'react-native';
-import { useState } from 'react';
+import TabExample from './components/TabExample';
+import DrawerExample from './components/DrawerExample';
+
+const Stack = createNativeStackNavigator();
+
+function ImageTitle() { return <View style={documentStyles.navLogo}><Image style={documentStyles.navLogo} source={require('./assets/logo.png')}/></View> };
 
 export default function App() {
-  const [showMenu, setShowMenu] = useState(false);
+
   return <>
-          <View style={documentStyles.container}>
-            <LittleLemonHeader/>
-
-            { showMenu && (
-              <><MenuItems/>
-              <SectionItems/></>)
-            }
-        
-            <ScrollView style={documentStyles.scrollView} keyboardDismissMode="on-drag">
-                { !showMenu && <><WelcomeScreen/>
-                <View style={documentStyles.imageContainer}>
-                  <ImageBackground style={documentStyles.image} source={require('./assets/budda.jpeg')}>
-                    <Text style={documentStyles.imageText}>Delicious Dishes!</Text>
-                  </ImageBackground>
-                  </View>
-                  </> }
-                <Pressable onPress={()=>setShowMenu(!showMenu)}>
-                  <View style={documentStyles.buttonShadow}>
-                  <Text style={documentStyles.button}>{ !showMenu ? 'SHOW MENU' : 'HOME'}</Text>
-                  </View>
-                </Pressable>
-            </ScrollView>
-
-            <KeyboardAvoidingView behavior='padding'>
-            { !showMenu && <TextInputSample/> }
-            </KeyboardAvoidingView>
-          
-          </View>
+          {/*
+            navigate
+            push
+            goBack
+            popToTop
+          */}
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName='Welcome' 
+              screenOptions={{ headerTitleStyle:{color: 'white'},
+             headerStyle: { backgroundColor: '#495e57'} }}>
+              <Stack.Screen options={{title: 'Home', headerTitle: (props) => <ImageTitle {...props}/>}} name='Welcome' component={Home}/>
+              <Stack.Screen name='Menu' component={Menu}/>
+              <Stack.Screen name="TabExample" component={TabExample}/>
+              <Stack.Screen name="DrawerExample" component={DrawerExample}/>
+            </Stack.Navigator>
 
           <View style={documentStyles.footer}>
             <Footer/>
           </View>
+          </NavigationContainer>
     </>;
 }
