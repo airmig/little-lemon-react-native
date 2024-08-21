@@ -78,7 +78,7 @@ export const documentStyles = StyleSheet.create({
         marginBottom: 10
     },
     scrollView:{
-        flex: 0.8
+        flex: 1.3
     },
     button: {
         backgroundColor: yellow,
@@ -95,5 +95,30 @@ export const documentStyles = StyleSheet.create({
         shadowOpacity: 0.3,
         elevation: 15,
         shadowOffset: { width: 0, height: 2}
+    },
+    logo: {
+        height: 100,
+        width: '100%',
+        resizeMode: 'contain',
+        backgroundColor: '#c4c4c4'
+    },
+    image: {
+        border: 2,
+        width: '100%',
+        height: 200,
+        resizeMode: 'contain',
+        borderRadius: 15,
+        flex: 1
+    },
+    imageContainer: {
+        flex: 1,
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+    imageText:{
+        fontStyle: 'bold',
+        fontSize: 20,
+        backgroundColor: 'white',
+        padding: 10
     }
 });
