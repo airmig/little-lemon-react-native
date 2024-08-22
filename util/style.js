@@ -11,7 +11,6 @@ export const documentStyles = StyleSheet.create({
         backgroundColor: green,
     },
     headerView:{
-        paddingTop: 20,
          backgroundColor: yellow
     },
     viewMenuItem: {
